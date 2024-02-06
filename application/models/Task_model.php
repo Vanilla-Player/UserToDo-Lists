@@ -12,7 +12,7 @@ class Task_model extends CI_Model{
 
     public function get_tasks_with_users(){
 
-            $this->db->select('tasks.* , users.*');
+            $this->db->select('tasks.* , users.id AS user_id, users.username');
             $this->db->from('tasks');
             $this->db->join('users', 'tasks.user_id = users.id');
             $query = $this->db->get();

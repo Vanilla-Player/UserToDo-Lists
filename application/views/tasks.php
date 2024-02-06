@@ -19,6 +19,13 @@
         <tbody>
             <?php foreach ($tasks as $task): ?>
                 <tr>
+                    <p><?php $searchValue = 12;
+                     foreach ($task as $key => $value) {
+                        if ($value === $searchValue) {
+                            echo "The key associated with value $searchValue is: $key";
+                            break;
+                        }
+                    }?></p>
                     <td><?php echo $task->description; ?></td>
                     <td><?php echo $task->username;?></td>
                     <td>
